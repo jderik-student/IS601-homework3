@@ -1,20 +1,24 @@
+from calculator.calculation import Calculation
+from calculator.operations import add, subtract, multiply, divide
+
 '''
-    This code defines a basic calculator that can only add, subtract, multiply, and divide 
+    This class defines a basic calculator that can only add, subtract, multiply, and divide 
 '''
-def add(a,b):
-    """Performs addition"""
-    return a + b
 
-def subtract(a,b):
-    """Performs subtraction"""
-    return a - b
-
-def multiply(a,b):
-    """Performs multiplication"""
-    return a * b
-
-def divide(a,b):
-    """Performs division, raises a ValueError if given a 0 as the Divisor"""
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a / b
+class Calculator:
+    @staticmethod
+    def add(a,b):
+        calculation = Calculation(a,b, add)
+        return calculation.calculate()
+    
+    def subtract(a,b):
+        calculation = Calculation(a,b, subtract)
+        return calculation.calculate()
+    
+    def multiply(a,b):
+        calculation = Calculation(a,b, multiply)
+        return calculation.calculate()
+    
+    def divide(a,b):
+        calculation = Calculation(a,b, divide)
+        return calculation.calculate()

@@ -1,8 +1,11 @@
-'''My Calculator Test'''
+# pylint: disable=unnecessary-dunder-call, invalid-name
+'''
+    This file contains tests to test the Calculator
+'''
+
 import pytest
 from calculator import Calculator
 
-# pylint: disable=unnecessary-dunder-call, invalid-name
 
 def test_add():
     '''Test that addition function works '''    

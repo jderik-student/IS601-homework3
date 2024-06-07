@@ -35,7 +35,7 @@ def test_operations(a, b, operation, expected):
         @param operation: the operation function to be used in th calculation
         @param expected: the expected result of the calculation
     """
-    assert Calculation(a, b, operation).calculate() == expected
+    assert Calculation(a, b, operation).calculate() == expected, f"Failed {operation.__name__} operation with {a} and {b}"
 
 def test_repr():
     """
@@ -43,7 +43,7 @@ def test_repr():
     """
     calc = Calculation.create(6, 2, add)
     expected = "Calculation(6, 2, add)"
-    assert calc.__repr__() == expected
+    assert calc.__repr__() == expected, "The __repr__ method output does not match the expected string."
 
 def test_divide_by_zero_test():
     """

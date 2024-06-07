@@ -1,20 +1,50 @@
+# pylint: disable=unnecessary-dunder-call, invalid-name
 '''
-    This code defines the basic operations of a calculator that can only add, subtract, multiply, and divide 
+    This code defines the logic to preform the four mathematical operations:
+    add, subtract, multiply, and divide 
 '''
-def add(a,b):
-    """Performs addition"""
+
+from decimal import Decimal
+
+def add(a: Decimal,b: Decimal) -> Decimal:
+    """
+        Adds the Decimal in the a variable with the Decimal stored in the b variable.
+
+        @param a: the first Addend
+        @param b: the second Addend
+        @return: the Sum of the computed addition
+    """
     return a + b
 
-def subtract(a,b):
-    """Performs subtraction"""
+def subtract(a: Decimal,b: Decimal) -> Decimal:
+    """
+        Subtracts the Decimal in the b variable from the Decimal stored in the a variable.
+
+        @param a: the Minuened
+        @param b: the Subtrahend
+        @return: the Difference of of the computed subtraction
+    """
     return a - b
 
-def multiply(a,b):
-    """Performs multiplication"""
+def multiply(a: Decimal,b: Decimal) -> Decimal:
+    """
+        Multiplies the Decimal in the a variable by the Decimal stored in the b variable.
+
+        @param a: the Multiplicand
+        @param b: the Multiplicator
+        @return: the Product of the computed multiplication
+    """
     return a * b
 
-def divide(a,b):
-    """Performs division, raises a ValueError if given a 0 as the Divisor"""
+def divide(a: Decimal,b: Decimal) -> Decimal:
+    """
+        Divides the Decimal in the a variable by the Decimal stored in the b variable.
+
+        @param a: the Dividend
+        @param b: the Divisor
+        @return: the Quotient of the computed division
+        @raise: Value Error if b is 0
+    """
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
